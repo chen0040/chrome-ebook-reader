@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome Scroller",
+  "version": "0.0.1",
+  "content_scripts": [
+      {
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "js": [
+            "content.js",
+            "jquery-3.2.1.min.js"
+        ]
+      }
+  ],
+  "background": {
+    "scripts": [
+        "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+        "19": "icons/19x19.png",
+        "38": "icons/38x38.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Page Auto-Scroll"
+  },
+  "description": "Scroller that allows user to automate the vertical scrolling of the web page with user-defined speed",
+  "icons": { "16" : "images/icon16x16.png",
+            "48" : "images/icon48x48.png",
+            "128" : "images/icon128x128.png"},
+  "homepage_url": "https://github.com/chen0040/chrome-scroller",
+  "permissions": [
+    "http://insert_base_rss_url_here.com/*"
+  ]
+    
+}
