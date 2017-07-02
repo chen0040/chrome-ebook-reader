@@ -50,6 +50,18 @@ window.onload = function() {
             chrome.tabs.sendMessage(activeTab.id, {"message": "day_mode"});
           });
     };
+    document.getElementById("btnFontSizeOriginal").onclick = function() {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            var activeTab = tabs[0];
+            chrome.tabs.sendMessage(activeTab.id, {"message": "font_size_original"});
+          });
+    };
+    document.getElementById("btnFontSizeXXLarge").onclick = function() {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            var activeTab = tabs[0];
+            chrome.tabs.sendMessage(activeTab.id, {"message": "font_size_xx_large"});
+          });
+    };
     
     
     chrome.runtime.onMessage.addListener(

@@ -5,6 +5,7 @@ var scrollAmount = 0;
 var nightMode = false;
 var originBackgroundColor = document.body.style.backgroundColor;
 var originTextColor = document.body.style.color;
+var originFontSize = document.body.style.fontSize;
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
@@ -39,6 +40,10 @@ chrome.runtime.onMessage.addListener(
     } else if(request.message === 'day_mode') {
         document.body.style.backgroundColor = originBackgroundColor;
         document.body.style.color = originTextColor;
+    } else if(request.message === 'font_size_xx_large') {
+        document.body.style.fontSize = "xx-large";
+    } else if(request.message === 'font_size_original') {
+        document.body.style.fontSize = originFontSize;
     }
   }
 );
