@@ -4,6 +4,7 @@ var scrollDelta = 0.6;
 var scrollAmount = 0;
 var nightMode = false;
 var originBackgroundColor = document.body.style.backgroundColor;
+var originTextColor = document.body.style.color;
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
@@ -33,8 +34,10 @@ chrome.runtime.onMessage.addListener(
         chrome.runtime.sendMessage({"message": "return_get_scroll_delta", "delta": scrollDelta, "tab_id": request.tab_id});
     } else if(request.message === 'night_mode') {
         document.body.style.backgroundColor = "black";
+        document.body.style.color = "#ccffcc";
     } else if(request.message === 'day_mode') {
         document.body.style.backgroundColor = originBackgroundColor;
+        document.body.style.color = originTextColor;
     }
   }
 );
