@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Chrome Scroller",
+  "name": "Chrome Ebook Reader",
   "version": "0.0.1",
   "content_scripts": [
       {
@@ -25,13 +25,13 @@
         "38": "icons/38x38.png"
     },
     "default_popup": "popup.html",
-    "default_title": "Page Auto-Scroll"
+    "default_title": "Ebook Reader"
   },
-  "description": "Scroller that allows user to automate the vertical scrolling of the web page with user-defined speed",
+  "description": "Ebook Reader Utility",
   "icons": { "16" : "images/icon16x16.png",
             "48" : "images/icon48x48.png",
             "128" : "images/icon128x128.png"},
-  "homepage_url": "https://github.com/chen0040/chrome-scroller",
+  "homepage_url": "https://github.com/chen0040/chrome-ebook-reader",
   "permissions": [
     "http://insert_base_rss_url_here.com/*"
   ]

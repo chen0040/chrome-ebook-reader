@@ -38,7 +38,18 @@ window.onload = function() {
             chrome.tabs.sendMessage(activeTab.id, {"message": "set_scroll_delta", "delta": delta});
           });
     };
-    
+    document.getElementById("btnNightMode").onclick = function() {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            var activeTab = tabs[0];
+            chrome.tabs.sendMessage(activeTab.id, {"message": "night_mode"});
+          });
+    };
+    document.getElementById("btnDayMode").onclick = function() {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            var activeTab = tabs[0];
+            chrome.tabs.sendMessage(activeTab.id, {"message": "day_mode"});
+          });
+    };
     
     
     chrome.runtime.onMessage.addListener(

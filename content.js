@@ -2,11 +2,13 @@
 var scrollInterval = null; 
 var scrollDelta = 0.6;
 var scrollAmount = 0;
+var nightMode = false;
+var originBackgroundColor = document.body.style.backgroundColor;
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "about" ) {
-      chrome.runtime.sendMessage({"message": "open_about", "url": "https://github.com/chen0040/chrome-scroller"});
+      chrome.runtime.sendMessage({"message": "open_about", "url": "https://github.com/chen0040/chrome-ebook-reader"});
     } else if(request.message === 'enable_scroll') {
         if(scrollInterval != null) {
             clearInterval(scrollInterval);
@@ -29,6 +31,10 @@ chrome.runtime.onMessage.addListener(
         scrollDelta = request.delta;
     } else if(request.message === 'get_scroll_delta') {
         chrome.runtime.sendMessage({"message": "return_get_scroll_delta", "delta": scrollDelta, "tab_id": request.tab_id});
+    } else if(request.message === 'night_mode') {
+        document.body.style.backgroundColor = "black";
+    } else if(request.message === 'day_mode') {
+        document.body.style.backgroundColor = originBackgroundColor;
     }
   }
 );
