@@ -7,8 +7,14 @@ chrome extension of ebook reader utility
 * Allow user to switch to night mode 
 
 # Install
+
+### Install from Chrome Web Store
+Go to [this link](https://chrome.google.com/webstore/detail/chrome-ebook-reader/cpmngeejpflmlfimkjocejkdgphapifl) at Chrome Web Store and install
  
-I have not published this extension in the Google Chrome yet, if you want to use it, follow the instructions below:
+ 
+### Install in Developer Mode
+
+if you want to use the source code instead, follow the instructions below:
 
 * Step 1. git clone this project "chrome-scroller" to your local computer
 * Step 2. Open your Chrome browser, type “chrome://extensions” in a tab to bring up the extensions page.
